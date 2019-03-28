@@ -1,6 +1,6 @@
 package bomb1;
 import java.util.*;
-public class bombMain {
+public class MineSweeper {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner s = new Scanner(System.in);
@@ -69,14 +69,27 @@ class CheckerBoard {
 		else Expend(x,y);
 	}
 	public void print() {
+		int r = 1;
 		count = 0;
+		System.out.print("   ");
+		for(int t=1;t<=size;t++) {
+			System.out.printf("%3d",t);
+		}
+		System.out.println();
+		System.out.print("   ");
+		for(int t=1;t<=size;t++) {
+			System.out.print("---");
+		}
+		System.out.println();
 		for(int[][] i:arr) {
+			System.out.printf("%2d|",r);
+			r++;
 			for(int[] j:i) {
 				if(j[1]==1) {
-					System.out.printf("%2d",j[0]);
+					System.out.printf("%3d",j[0]);
 					count++;
 				}else {
-					System.out.print(" *");
+					System.out.print("  *");
 				}
 			}
 			System.out.println();
